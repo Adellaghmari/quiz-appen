@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <!-- Information och länk till CSS o JavaScript <3 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizutmaningen</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js">defer</script>
+</head>
+<body>
+  <!-- Hero-sektionen: LÄNGST UPP, Huvudrubrik och quiz-valen-->
+  <div class="hero">
+    <h1>Redo för Quizutmaningen?</h1>
+    <p>Hur bra koll har du på FC Barcelona och OS? Ta reda på det här!</p>
+    <button onclick="startQuiz('barcelona')">Starta FC Barcelona Quiz</button>
+    <button onclick="startQuiz('os')">Starta Olympiska Spelen Quiz</button>
+  </div>
+
+  <!-- Fakta sektion för Startsidan: Här finns fakta för quizen om Barca och OS-->
+  <div class="facts">
+    <!-- Barcelona-fakta -->
+    <div class="fact-barcelona">
+      <h3>Fakta om FC Barcelona</h3>
+      <ul>
+        <li>FC Barcelona är den enda klubben som aldrig degraderats från La Liga.</li>
+        <li>Klubben har en av världens mest lojala supporterbaser.</li>
+        <li>Barça och Real Madrid har en av de största rivaliteterna inom sport, kallad El Clásico.</li>
+        <li>FC Barcelona ägs och drivs av sina medlemmar.</li>
+        <li>Klubben grundades 1899 av schweiziska, engelska och katalanska fotbollsentusiaster.</li>
+      </ul>
+    </div>
+    <!-- OS-fakta -->
+    <div class="fact-os">
+      <h3>Fakta om Olympiska Spelen</h3>
+      <ul>
+        <li>Olympiska spelen startade i antikens Grekland cirka 776 f.Kr.</li>
+        <li>Det första vinter-OS hölls 1924 i Chamonix, Frankrike.</li>
+        <li>Medaljceremonierna inkluderar alltid nationens hymn för vinnaren.</li>
+        <li>OS facklan färdas över hela världen innan spelen börjar.</li>
+        <li>Den olympiska flaggan har fem sammanlänkade ringar för att representera de fem världsdelarna.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Visar vem som gjort quizet :) -->
+  <div class="creator">
+    <p>Denna quiz är skapad av <strong>Adel Laghmari</strong></p>
+  </div>
+
+  <!-- Quiz-container: Döljs från start, visar frågorna när quizet startas -->
+  <div id="quiz-container" class="hidden">
+    <div id="quiz-header">
+      <h2 id="quiz-title"></h2>
+      <p id="timer">Tid kvar: <span id="time-left">30</span> sekunder</p>
+    </div>
+    <div id="quiz-content">
+      <p id="question"></p>
+      <div id="choices">
+        <!-- Alternativen för svar kommer att läggas till här via JavaScript -->
+      </div>
+      <!-- Beskrivning för valt quiztema -->
+      <p id="quiz-description"></p>
+    </div>
+    <!-- Nästa-knapp för att gå vidare till nästa fråga -->
+    <button id="next-button" onclick="nextQuestion()">Nästa</button>
+    <!-- Visar vem som gjort quizet :) -->
+    <div class="creator">
+      <p>Denna quiz är skapad av <strong>Adel Laghmari</strong></p>
+    </div>
+  </div>
+
+  <!-- Resultat-container: Visar resultatet när quizet är slut -->
+  <div id="result-container" class="hidden">
+    <h2>Ditt Resultat</h2>
+    <p id="score"></p>
+    <div class="creator">
+      <p>Denna quiz är skapad av <strong>Adel Laghmari</strong></p>
+    </div>
+    <button onclick="restartQuiz()">Starta Om</button>
+  </div>
+
+</body>
+</html>
